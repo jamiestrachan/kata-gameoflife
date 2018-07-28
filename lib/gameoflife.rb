@@ -3,6 +3,8 @@ class GameOfLife
 
   def initialize(start_state = '')
     @state = start_state
+    @board = start_state.split('\n')
+    @rows, @cols = @board.shift.split(' ')
   end
 
   def tick

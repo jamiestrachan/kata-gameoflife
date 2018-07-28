@@ -1,13 +1,6 @@
 require 'gameoflife'
 
 RSpec.describe GameOfLife do
-  context 'with no initial state' do
-    it 'should return an empty board' do
-      gol = GameOfLife.new
-      expect(gol.state).to eq ''
-    end
-  end
-
   context 'with a board of dimensions 0, 0' do
     it 'should return a board of dimensions 0, 0' do
       gol = GameOfLife.new('0 0')

@@ -23,13 +23,9 @@ class GameOfLife
     neighbor_cells = count_neighbor_cells(neighbors)
     new_state = current
     if current == '*'
-      if neighbor_cells < 2 || neighbor_cells > 3
-        new_state = '.'
-      end
+      new_state = '.' if neighbor_cells < 2 || neighbor_cells > 3
     else
-      if neighbor_cells == 3
-        new_state = '*'
-      end
+      new_state = '*' if neighbor_cells == 3
     end
     new_state
   end
@@ -55,6 +51,6 @@ class GameOfLife
   end
 
   def count_neighbor_cells(neighbors)
-    neighbors.select{ |row_index, col_index| @board[row_index][col_index] == '*' }.size
+    neighbors.select { |row_index, col_index| @board[row_index][col_index] == '*' }.size
   end
 end
